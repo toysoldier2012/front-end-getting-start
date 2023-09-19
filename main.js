@@ -38,6 +38,10 @@ let student = {"name": "John", "yearOfBirth": 1990, "country":"Italy"};
 console.log(student.name);
 
 /**Greeting section**/
+ 
+function celsiusToFahr(tempCels){
+    return tempCels * 9 / 5 + 32;
+}
 
 const greetingText = "Good morning!"
 
@@ -45,7 +49,7 @@ const weatherCondition = "sunny";
 const userLocation = "Paris";
 let temperature = 22.54678;
 
-let weatherText = `The weather is ${weatherCondition} in ${userLocation} and it's ${temperature.toFixed(0)}°C outside.`;
+let weatherText = `The weather is ${weatherCondition} in ${userLocation} and it's ${celsiusToFahr(temperature).toFixed(0) + "°F"} outside.`;
 console.log(weatherText);
 
 document.querySelector('#greeting').innerHTML = greetingText;
