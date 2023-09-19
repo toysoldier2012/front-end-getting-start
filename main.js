@@ -23,3 +23,17 @@ console.log("Hello " + customer);
 
 const constant = 2000;
 let variable = 200;
+
+/**Greeting section**/
+
+const greetingText = "Good morning!"
+
+const weatherCondition = "sunny";
+const userLocation = "Paris";
+let temperature = 22.54678;
+
+let weatherText = `The weather is ${weatherCondition} in ${userLocation} and it's ${temperature.toFixed(0)}°C outside.`;
+console.log(weatherText);
+
+document.querySelector('#greeting').innerHTML = greetingText;
+document.querySelector('#weather').innerHTML = weatherText;
