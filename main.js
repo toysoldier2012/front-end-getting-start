@@ -37,6 +37,11 @@ console.log(arrayConcat);
 let student = {"name": "John", "yearOfBirth": 1990, "country":"Italy"};
 console.log(student.name);
 
+let date = new Date("2023-09-19");
+console.log(date);
+let date2 = new Date("2023-10-18");
+console.log(date2 - date);
+
 /**Greeting section**/
  
 function celsiusToFahr(tempCels){
@@ -48,11 +53,18 @@ const greetingText = "Good morning!"
 const weatherCondition = "sunny";
 const userLocation = "Paris";
 let temperature = 22.54678;
+let temperatureText = temperature.toFixed(0) + "°C";
 
-let weatherText = `The weather is ${weatherCondition} in ${userLocation} and it's ${celsiusToFahr(temperature).toFixed(0) + "°F"} outside.`;
-console.log(weatherText);
+let weatherText = `The weather is ${weatherCondition} in ${userLocation} and it's ${temperatureText} outside.`;
 
 document.querySelector('#greeting').innerHTML = greetingText;
 document.querySelector('#weather').innerHTML = weatherText;
 
-
+document.querySelector('.weather-group').addEventListener('click', function(e){
+    if(e.target.id == "fahr") {
+        temperatureText = celsiusToFahr(temperature).toFixed(0) + "°F";
+    } else if(e.target.id == "celsius") {
+        temperatureText = temperature.toFixed(0) + "°C";
+    }
+    document.querySelector('p#weather').innerHTML = `The weather is ${weatherCondition} in ${userLocation} and it's ${temperatureText} outside.`;
+});
