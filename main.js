@@ -3,8 +3,6 @@ function testAlert(message){
     alert(message);
 }
 
-console.log("test in console");
-
 document.getElementById('greeting').innerHTML="Hello world!";
 
 document.querySelector('#open-nav-menu').addEventListener('click', function(){
@@ -19,8 +17,6 @@ document.querySelector("#close-nav-menu").addEventListener("click", function(){
 /**variable**/
 
 var customer = "John";
-console.log("Hello " + customer);
-
 const constant = 2000;
 let variable = 200;
 
@@ -29,18 +25,13 @@ let variable = 200;
 let array = [0,1,2,3,4,5,6,7];
 array.push(10);
 array.unshift(-1);
-console.log(array);
 let arrayConcat = array.concat([5646,879,12]);
-console.log(arrayConcat);
 
 /**Object**/
 let student = {"name": "John", "yearOfBirth": 1990, "country":"Italy"};
-console.log(student.name);
 
 let date = new Date("2023-09-19");
-console.log(date);
 let date2 = new Date("2023-10-18");
-console.log(date2 - date);
 
 /**Greeting section**/
  
@@ -72,7 +63,19 @@ document.querySelector('.weather-group').addEventListener('click', function(e){
 setInterval(() => {
     let localTime = new Date();
 
-    document.querySelector("span[data-time=hours]").textContent = localTime.getHours();
-    document.querySelector("span[data-time=minutes]").textContent = localTime.getMinutes();
-    document.querySelector("span[data-time=seconds]").textContent = localTime.getSeconds();
+    document.querySelector("span[data-time=hours]").textContent = localTime.getHours().toString().padStart(2, "0");
+    document.querySelector("span[data-time=minutes]").textContent = localTime.getMinutes().toString().padStart(2, "0");
+    document.querySelector("span[data-time=seconds]").textContent = localTime.getSeconds().toString().padStart(2, "0");
 }, 1000);
+
+for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    console.log(element);
+}
+
+for (const key in student) {
+    if (Object.hasOwnProperty.call(student, key)) {
+        const element = student[key];
+        console.log(element);
+    }
+}
