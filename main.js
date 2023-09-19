@@ -14,3 +14,12 @@ document.querySelector('#open-nav-menu').addEventListener('click', function(){
 document.querySelector("#close-nav-menu").addEventListener("click", function(){
     document.querySelector("header nav .wrapper").classList.remove("nav-open");
 });
+
+
+/**variable**/
+
+var customer = "John";
+console.log("Hello " + customer);
+
+const constant = 2000;
+let variable = 200;
