@@ -5,7 +5,7 @@ let array = [0,1,2,3,4,5,6,7];
 array.push(10);
 array.unshift(-1);
 let arrayConcat = array.concat([5646,879,12]);
-let openWeatherAPIKey = '7b594417c42db52d6df1a9c9be79fd8d';
+let openWeatherAPIKey = 'xxxxxxxxxxxxxxxxxxxxxxxx';
 let openWeatherAPIUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=${openWeatherAPIKey}&units=metric`;
     
 const aThumbnailsImages = [
