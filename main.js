@@ -3,8 +3,6 @@ function testAlert(message){
     alert(message);
 }
 
-console.log("test in console");
-
 document.getElementById('greeting').innerHTML="Hello world!";
 
 document.querySelector('#open-nav-menu').addEventListener('click', function(){
@@ -19,8 +17,6 @@ document.querySelector("#close-nav-menu").addEventListener("click", function(){
 /**variable**/
 
 var customer = "John";
-console.log("Hello " + customer);
-
 const constant = 2000;
 let variable = 200;
 
@@ -29,18 +25,12 @@ let variable = 200;
 let array = [0,1,2,3,4,5,6,7];
 array.push(10);
 array.unshift(-1);
-console.log(array);
 let arrayConcat = array.concat([5646,879,12]);
-console.log(arrayConcat);
 
 /**Object**/
 let student = {"name": "John", "yearOfBirth": 1990, "country":"Italy"};
-console.log(student.name);
-
 let date = new Date("2023-09-19");
-console.log(date);
 let date2 = new Date("2023-10-18");
-console.log(date2 - date);
 
 /**Greeting section**/
  
@@ -48,7 +38,14 @@ function celsiusToFahr(tempCels){
     return tempCels * 9 / 5 + 32;
 }
 
-const greetingText = "Good morning!"
+let currentTime = new Date();
+let greetingText;
+
+if(currentTime.getHours() < 12 && currentTime.getHours() > 5 )
+    greetingText = "Good morning!";
+else if(currentTime.getHours() >= 12 && currentTime.getHours() < 18)
+    greetingText = "Good afternoon!";
+else greetingText = "Good evening!";
 
 const weatherCondition = "sunny";
 const userLocation = "Paris";
@@ -70,9 +67,53 @@ document.querySelector('.weather-group').addEventListener('click', function(e){
 });
 
 setInterval(() => {
-    let localTime = new Date();
+    currentTime = new Date();
 
-    document.querySelector("span[data-time=hours]").textContent = localTime.getHours();
-    document.querySelector("span[data-time=minutes]").textContent = localTime.getMinutes();
-    document.querySelector("span[data-time=seconds]").textContent = localTime.getSeconds();
+    document.querySelector("span[data-time=hours]").textContent = currentTime.getHours().toString().padStart(2, "0");
+    document.querySelector("span[data-time=minutes]").textContent = currentTime.getMinutes().toString().padStart(2, "0");
+    document.querySelector("span[data-time=seconds]").textContent = currentTime.getSeconds().toString().padStart(2, "0");
 }, 1000);
+
+/**Gallery section**/
+
+let mainImage = document.querySelector("#gallery > img");
+mainImage.src = "/assets/gallery/image1.jpg";
+mainImage.alt = "image 1";
+
+let thumbnails = document.querySelector("#gallery .thumbnails");
+
+const aThumbnailsImages = [
+    {
+        "src":"./assets/gallery/image1.jpg",
+        "alt":"Thumbnail Image 1"
+    },
+    {
+        "src":"./assets/gallery/image2.jpg",
+        "alt":"Thumbnail Image 2"
+    },
+    {
+        "src":"./assets/gallery/image3.jpg",
+        "alt":"Thumbnail Image 3"
+    },
+];
+
+// src="./assets/gallery/image1.jpg" alt="Thumbnail Image 1" data-array-index="0" data-selected="true"
+aThumbnailsImages.forEach(function(image, index){
+    let thumbImg = document.createElement("img");
+    thumbImg.src = image.src;
+    thumbImg.alt = image.alt;
+    thumbImg.dataset.arrayIndex = index;
+    thumbImg.dataset.selected = false;
+    thumbImg.addEventListener("click", function(){
+        thumbnails.childNodes.forEach((element) => {
+            element.dataset.selected = false;
+        });
+        thumbImg.dataset.selected = true;
+        mainImage.src = thumbImg.src;
+        mainImage.alt = thumbImg.alt;
+    });
+    thumbnails.appendChild(thumbImg);
+});
+
+thumbnails.childNodes[0].dataset.selected = true;
+
