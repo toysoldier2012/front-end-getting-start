@@ -11,6 +11,21 @@ let array = [0,1,2,3,4,5,6,7];
 array.push(10);
 array.unshift(-1);
 let arrayConcat = array.concat([5646,879,12]);
+    
+const aThumbnailsImages = [
+    {
+        "src":"./assets/gallery/image1.jpg",
+        "alt":"Thumbnail Image 1"
+    },
+    {
+        "src":"./assets/gallery/image2.jpg",
+        "alt":"Thumbnail Image 2"
+    },
+    {
+        "src":"./assets/gallery/image3.jpg",
+        "alt":"Thumbnail Image 3"
+    },
+];
 
 /**Object**/
 let student = {"name": "John", "yearOfBirth": 1990, "country":"Italy"};
@@ -75,21 +90,6 @@ function galleryHandler(){
     mainImage.alt = "image 1";
     
     let thumbnails = document.querySelector("#gallery .thumbnails");
-    
-    const aThumbnailsImages = [
-        {
-            "src":"./assets/gallery/image1.jpg",
-            "alt":"Thumbnail Image 1"
-        },
-        {
-            "src":"./assets/gallery/image2.jpg",
-            "alt":"Thumbnail Image 2"
-        },
-        {
-            "src":"./assets/gallery/image3.jpg",
-            "alt":"Thumbnail Image 3"
-        },
-    ];
     
     // src="./assets/gallery/image1.jpg" alt="Thumbnail Image 1" data-array-index="0" data-selected="true"
     aThumbnailsImages.forEach(function(image, index){
