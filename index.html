@@ -89,10 +89,10 @@
                 </svg>
               </button>
             </li>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#faqs">FAQs</a></li>
+            <li id="close-nav-menu"><a href="#home">Home</a></li>
+            <li><a id="close-nav-menu" href="#gallery">Gallery</a></li>
+            <li><a id="close-nav-menu" href="#products">Products</a></li>
+            <li><a id="close-nav-menu" href="#faqs">FAQs</a></li>
             <li class="socials">
               <p>Join our community</p>
 
@@ -131,8 +131,8 @@
     <main>
       <section id="home" class="container greeting-section">
         <div class="left-side">
-          <h1 id="greeting">Good Morning!</h1>
-          <p id="weather">The weather is cloudy in London and it's 22°C outside. </p>
+          <h1 id="greeting"></h1>
+          <p id="weather"></p>
           <div class="weather-group">
             <input
               type="radio"
@@ -150,17 +150,17 @@
           <p>Local time:</p>
           <div class="local-time">
             <div class="time-holder">
-              <span data-time="hours" class="time-number">08</span>
+              <span data-time="hours" class="time-number"></span>
               <span class="time-letter">Hours</span>
             </div>
             <span class="time-divider">:</span>
             <div class="time-holder">
-              <span data-time="minutes" class="time-number">25</span>
+              <span data-time="minutes" class="time-number"></span>
               <span class="time-letter">mins</span>
             </div>
             <span class="time-divider">:</span>
             <div class="time-holder">
-              <span data-time="seconds" class="time-number">13</span>
+              <span data-time="seconds" class="time-number"></span>
               <span class="time-letter">secs</span>
             </div>
           </div>
@@ -168,13 +168,8 @@
       </section>
 
       <section id="gallery" class="gallery-section">
-        <img src="/assets/gallery/image1.jpg" alt="image 1" />
-
-        <div class="thumbnails">
-          <img src="./assets/gallery/image1.jpg" alt="Thumbnail Image 1" data-array-index="0" data-selected="true">
-          <img src="./assets/gallery/image2.jpg" alt="Thumbnail Image 2" data-array-index="1" data-selected="false">
-          <img src="./assets/gallery/image3.jpg" alt="Thumbnail Image 3" data-array-index="2" data-selected="false">
-        </div>
+        <img />
+        <div class="thumbnails"></div>
       </section>
 
       <section id="products" class="container products-section">
@@ -198,36 +193,7 @@
           <span class="glider"></span>
         </div>
 
-        <div class="products-area">
-          <div class="product-item">
-             <img src="./assets/products/img6.png" alt="AstroFiction">
-             <div class="product-details">
-                <h3 class="product-title">AstroFiction</h3>
-                <p class="product-author">John Doe</p>
-                <p class="price-title">Price</p>
-                <p class="product-price">$ 49.90</p>
-             </div>
-          </div>
-          <div class="product-item">
-             <img src="./assets/products/img1.png" alt="Space Odissey">
-             <div class="product-details">
-                <h3 class="product-title">Space Odissey</h3>
-                <p class="product-author">Marie Anne</p>
-                <p class="price-title">Price</p>
-                <p class="product-price">$ 35.00</p>
-             </div>
-          </div>
-          <div class="product-item">
-             <img src="./assets/products/img2.png" alt="Doomed City">
-             <div class="product-details">
-                <h3 class="product-title">Doomed City</h3>
-                <p class="product-author">Jason Cobert</p>
-                <p class="price-title">Price</p>
-                <p class="product-price">Free</p>
-             </div>
-          </div>
-          
-       </div>
+        <div class="products-area"></div>
 
       </section>
 
